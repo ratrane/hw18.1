@@ -10,11 +10,8 @@ class Stack
 {
 private:
 
+	int n;
 	int* DinamicArray = new int[n];
-	int n;	
-	int b;
-	int i;
-	int* c = &i;
 	
 
 public:
@@ -47,16 +44,16 @@ public:
 		cout  << "\n"<< "Pop: ";	
 	}
 
-	/*void pop() //Capture and delete top element of stack
+	void pop() //Capture and delete top element of stack
 	{
 		for (int i = n - 1; i < n; i++)
 		{
 			int* d = &DinamicArray[i];
 			cout << *d;
-			delete[] d;
+			//delete d;
 		}
 		
-	}*/
+	}
 };
 
 int main()
@@ -65,7 +62,7 @@ int main()
 	temp.EnterSize();
 	temp.push();
 	temp.OutputStack();
-	/*temp.pop();*/
+	temp.pop();
 	
 
 	/*int a = 5;
