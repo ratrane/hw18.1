@@ -47,7 +47,7 @@ public:
 		cout  << "\n"<< "Pop: ";	
 	}
 
-	void pop() //Capture and delete top element of stack
+	/*void pop() //Capture and delete top element of stack
 	{
 		for (int i = n - 1; i < n; i++)
 		{
@@ -56,7 +56,7 @@ public:
 			delete[] d;
 		}
 		
-	}
+	}*/
 };
 
 int main()
