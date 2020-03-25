@@ -10,7 +10,7 @@ class Stack
 {
 private:
 
-	int n;
+	int n = 0;
 	int* DinamicArray = new int[n];
 	
 
@@ -54,6 +54,7 @@ public:
 		}
 		
 	}
+
 };
 
 int main()
