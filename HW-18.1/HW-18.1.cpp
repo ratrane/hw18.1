@@ -10,66 +10,67 @@ class Stack
 {
 private:
 
-	int n = 0;
-	int* DinamicArray = new int[n];
-	
+	int value;
 
 public:
 
-	void EnterSize() // Enter size of stack
+	int count = 0;
+	int ArraySize;
+	int* Array = new int[ArraySize];
+
+	Stack()
 	{
-		cout << "Please enter size of Array: ";
-		cin >> n;
+		cout<< "Enter size of array: ";
+		cin >> ArraySize;
 	}
 
-	void push() //Pushing variables into stack
+	void push()
 	{
-		for (int i = 0; i < n; i++)
-		{
-			cout << "Push value: ";
-			cin >> DinamicArray[i];
-		}
+		count++;
+		cout << "Enter value for push: ";
+		cin >> Array[count];
+		cout << Array[count] << " pushed" << endl;
+	};
+
+	void pop()
+	{	
+		cout << Array[count] << " removed" << endl;
+		count--;
 	}
-
-	void OutputStack() 
-	{
-		cout << "Your Array: ";
-
-		for (int b = 0; b < n; b++)
-		{
-			int* t = &b;
-			cout << DinamicArray[*t] << " ";
-		}
-
-		cout  << "\n"<< "Pop: ";	
-	}
-
-	void pop() //Capture and delete top element of stack
-	{
-		for (int i = n - 1; i < n; i++)
-		{
-			int* d = &DinamicArray[i];
-			cout << *d;
-			//delete d;
-		}
-		
-	}
-
 };
 
 int main()
 {
-	Stack temp;
-	temp.EnterSize();
-	temp.push();
-	temp.OutputStack();
-	temp.pop();
-	
+	Stack* temp = new Stack;	
+	int option;
+	int k = 1;
 
-	/*int a = 5;
-	int *b=&a;
-	cout << *b;*/
-	
+	while (k == 1)
+	{
+		cout << "Options: 0 - Exit, 1 - push value, 2 - pop value" << endl<< "Enter option: ";
+		cin >> option;
+
+		switch (option)
+		{
+		case 0:
+				k = 0;
+				break;
+			
+		case 1:
+			if ((temp->ArraySize) > (temp->count))
+			{
+				temp->push();
+			}
+			else
+			{
+				cout << "Stack is full"<<endl;
+			}
+			break;
+		
+		case 2:
+			temp->pop();
+		
+	}
 	
 }
 
